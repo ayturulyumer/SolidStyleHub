@@ -69,7 +69,7 @@ export default function Slider() {
                   index == currentSlide
                     ? styles.carouselPaginationDotActive
                     : styles.carouselPaginationDot
-                }`} onClick={() => setCurrentSlide(index)}
+                }`} onMouseOver={() => setCurrentSlide(index)}
               ></div>
             );
           })}
