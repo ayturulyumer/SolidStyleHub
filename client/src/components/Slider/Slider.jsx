@@ -17,17 +17,23 @@ export default function Slider() {
   return (
     <div className={styles.slider}>
       <div className={styles.container}>
-        {sliderImages.map((image, index) => (
-          <div
-            key={index}
-            className={index === 0 ? styles.carouselActive : styles.carouselCard} 
-          >
-            <img className={styles.cardImage} src={image.url} alt={image.title} />
-            <div className={styles.cardOverlay}>
-              <h2 className={styles.cardTitle}>{image.title}</h2>
+        {sliderImages.map((image, index) => {
+          return (
+            <div
+              key={index}
+              className={`${styles.carouselCard} ${index == 0 ? styles.carouselCardActive : styles.carouselCard}`}
+            >
+              <img
+                className={styles.cardImage}
+                src={image.url}
+                alt={image.title}
+              />
+              <div className={styles.cardOverlay}>
+                <h2 className={styles.cardTitle}>{image.title}</h2>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
       <div className={styles.icons}>
         <div className={styles.icon} onClick={prevSlide}>

@@ -27,7 +27,7 @@
   transition: 0.5s ease-in-out;
 }
 
-.carouselActive {
+.carouselCardActive {
   opacity: 1;
   transform: scale(1);
   pointer-events: visible;
