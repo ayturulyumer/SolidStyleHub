@@ -1,6 +1,4 @@
 import styles from "./slider.module.css";
-import WestRoundedIcon from "@mui/icons-material/WestRounded";
-import EastRoundedIcon from "@mui/icons-material/EastRounded";
 import { useState } from "react";
 import { sliderImages } from "../../constants/constants.js";
 
@@ -21,7 +19,11 @@ export default function Slider() {
           return (
             <div
               key={index}
-              className={`${styles.carouselCard} ${index == 0 ? styles.carouselCardActive : styles.carouselCard}`}
+              className={`${styles.carouselCard} ${
+                index == currentSlide
+                  ? styles.carouselCardActive
+                  : styles.carouselCard
+              }`}
             >
               <img
                 className={styles.cardImage}
@@ -34,14 +36,8 @@ export default function Slider() {
             </div>
           );
         })}
-      </div>
-      <div className={styles.icons}>
-        <div className={styles.icon} onClick={prevSlide}>
-          <WestRoundedIcon />
-        </div>
-        <div className={styles.icon} onClick={nextSlide}>
-          <EastRoundedIcon />
-        </div>
+      <div className={styles.carouselArrowLeft} onClick={prevSlide}>&lsaquo;</div>
+      <div className={styles.carouselArrowRight} onClick={nextSlide}>&rsaquo;</div>
       </div>
     </div>
   );

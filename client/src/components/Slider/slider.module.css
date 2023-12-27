@@ -24,7 +24,7 @@
   opacity: 0;
   pointer-events: none;
   transform: scale(0.8);
-  transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in;
 }
 
 .carouselCardActive {
@@ -44,38 +44,41 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
-  padding: 10px 20px;
+  padding: 10px 20px ;
   align-items: flex-end;
 }
 
 .cardTitle {
-  color: whitesmoke;
-  font-size: 30px;
-  border-radius: 10px;
-  box-sizing: border-box;
+  color:  #070101;
+  border: 2px solid gray;
+  border-radius: 15px;
   width: auto;
   height: auto;
-  background-color:inherit;
+  background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
   cursor: pointer;
+  letter-spacing: 0.10mm;
 }
 
-.icons {
-  width: fit-content;
-  display: flex;
+.carouselArrowRight ,.carouselArrowLeft{
   position: absolute;
-  left: 0;
-  right: 0;
-  gap: 20px;
-  bottom: 5px;
-  margin: auto;
+  font-size: 40px;
+  top: 50%;
+  transform: translate(0, -50%);
+  background-color: gainsboro;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  padding-bottom: 7px;
+  cursor: pointer;
 }
 
-.icon {
-  width: 50px;
-  height: 50px;
-  border: 1px solid#ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+
+.carouselArrowLeft{
+  left: 15px;
+}
+.carouselArrowRight{
+  right: 15px;
 }
