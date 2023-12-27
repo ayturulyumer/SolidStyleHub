@@ -1,9 +1,18 @@
 import styles from "./slider.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { sliderImages } from "../../constants/constants.js";
 
 export default function Slider() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [autoPlay, setAutoPlay] = useState(true);
+  let timeOut = null;
+  useEffect(() => {
+    timeOut =
+      autoPlay &&
+      setTimeout(() => {
+        nextSlide();
+      }, 2500);
+  });
 
   const prevSlide = () => {
     setCurrentSlide(currentSlide === 0 ? 2 : currentSlide - 1);
@@ -14,7 +23,16 @@ export default function Slider() {
   };
   return (
     <div className={styles.slider}>
-      <div className={styles.container}>
+      <div
+        className={styles.container}
+        onMouseEnter={() => {
+          setAutoPlay(false);
+          clearTimeout(timeOut);
+        }}
+        onMouseLeave={() => {
+          setAutoPlay(true);
+        }}
+      >
         {sliderImages.map((image, index) => {
           return (
             <div
@@ -36,15 +54,26 @@ export default function Slider() {
             </div>
           );
         })}
-      <div className={styles.carouselArrowLeft} onClick={prevSlide}>&lsaquo;</div>
-      <div className={styles.carouselArrowRight} onClick={nextSlide}>&rsaquo;</div>
-      <div className={styles.carouselPagination}>
-        {sliderImages.map((_,index) => {
-          return (
-            <div key={index} className={`${styles.carouselPaginationDot} ${index == currentSlide ? styles.carouselPaginationDotActive : styles.carouselPaginationDot}`}></div>
-          )
-        })}
-      </div>
+        <div className={styles.carouselArrowLeft} onClick={prevSlide}>
+          &lsaquo;
+        </div>
+        <div className={styles.carouselArrowRight} onClick={nextSlide}>
+          &rsaquo;
+        </div>
+        <div className={styles.carouselPagination}>
+          {sliderImages.map((_, index) => {
+            return (
+              <div
+                key={index}
+                className={`${styles.carouselPaginationDot} ${
+                  index == currentSlide
+                    ? styles.carouselPaginationDotActive
+                    : styles.carouselPaginationDot
+                }`} onClick={() => setCurrentSlide(index)}
+              ></div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

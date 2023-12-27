@@ -24,7 +24,7 @@
   opacity: 0;
   pointer-events: none;
   transform: scale(0.8);
-  transition: 0.5s ease-in;
+transition: 0.5s linear;
 }
 
 .carouselCardActive {
@@ -50,13 +50,13 @@
 
 .cardTitle {
   color:  #070101;
-  border: 2px solid gray;
-  border-radius: 15px;
+  border-radius: 10px;
   width: auto;
   height: auto;
   background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
   cursor: pointer;
   letter-spacing: 0.10mm;
+  font-size: 30px
 }
 
 .carouselArrowRight ,.carouselArrowLeft{
