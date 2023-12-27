@@ -82,3 +82,28 @@
 .carouselArrowRight{
   right: 15px;
 }
+
+.carouselPagination{
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.carouselPaginationDot{
+  height: 10px;
+  width: 10px;
+  background-color: #f5f5f5;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.carouselPaginationDot:hover{
+  transform: scale(1.2);
+}
+
+.carouselPaginationDotActive{
+  background-color: steelblue;
+}

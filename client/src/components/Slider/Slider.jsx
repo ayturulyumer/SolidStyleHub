@@ -38,6 +38,13 @@ export default function Slider() {
         })}
       <div className={styles.carouselArrowLeft} onClick={prevSlide}>&lsaquo;</div>
       <div className={styles.carouselArrowRight} onClick={nextSlide}>&rsaquo;</div>
+      <div className={styles.carouselPagination}>
+        {sliderImages.map((_,index) => {
+          return (
+            <div key={index} className={`${styles.carouselPaginationDot} ${index == currentSlide ? styles.carouselPaginationDotActive : styles.carouselPaginationDot}`}></div>
+          )
+        })}
+      </div>
       </div>
     </div>
   );
