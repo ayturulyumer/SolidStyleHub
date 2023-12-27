@@ -49,14 +49,16 @@ transition: 0.5s linear;
 }
 
 .cardTitle {
-  color:  #070101;
+  color:  whitesmoke;
   border-radius: 10px;
   width: auto;
   height: auto;
-  background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+  background: linear-gradient(44.8deg, rgba(255, 136, 102, 0.67) -53.1%, rgba(255, 221, 136, 0.28) 49%);
   cursor: pointer;
   letter-spacing: 0.10mm;
-  font-size: 30px
+  font-size: 30px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 500;
 }
 
 .carouselArrowRight ,.carouselArrowLeft{

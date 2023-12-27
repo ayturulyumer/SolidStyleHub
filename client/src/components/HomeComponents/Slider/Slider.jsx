@@ -1,6 +1,6 @@
 import styles from "./slider.module.css";
 import { useEffect, useState } from "react";
-import { sliderImages } from "../../constants/constants.js";
+import { sliderImages } from "../../../constants/constants.js"
 
 export default function Slider() {
   const [currentSlide, setCurrentSlide] = useState(0);
