@@ -1,0 +1,47 @@
+.contact {
+  width: 100%;
+  background: linear-gradient(109.6deg, rgb(137, 191, 221) 11.2%, rgb(150, 144, 204) 100.2%);
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wrapper span{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+.mail input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+}
+.mail input::placeholder {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.mail button{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    padding: 10px;
+    color:white;
+    background: #333;
+    border-radius: 0 5px 5px 0;
+    border: none;
+    cursor: pointer;
+}
+
+.icons{
+    display: flex;
+    gap: 10px;
+}
