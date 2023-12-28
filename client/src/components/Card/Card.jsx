@@ -2,7 +2,6 @@ import styles from "./card.module.css"
 import {Link} from "react-router-dom"
  
 export default function Card({product}) {
-  console.log(product.isNew)
   return (
     <Link className="link" to={`/products/${product.id}`}>
         <div className={styles.card}>

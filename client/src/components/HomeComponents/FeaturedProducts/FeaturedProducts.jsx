@@ -1,5 +1,5 @@
 import styles from "./featuredProducts.module.css";
-import Card from "../Card/Card.jsx";
+import Card from "../../Card/Card.jsx";
 import { dummyProducts } from "../../../constants/constants.js";
 console.log(dummyProducts)
 

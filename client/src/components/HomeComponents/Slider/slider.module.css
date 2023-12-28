@@ -24,7 +24,7 @@
   opacity: 0;
   pointer-events: none;
   transform: scale(0.8);
-transition: 0.5s linear;
+  transition: 0.5s linear;
 }
 
 .carouselCardActive {
@@ -44,24 +44,30 @@ transition: 0.5s linear;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
-  padding: 10px 20px ;
+  padding: 10px 20px;
   align-items: flex-end;
 }
 
 .cardTitle {
-  color:  whitesmoke;
+  color: whitesmoke;
   border-radius: 10px;
   width: auto;
   height: auto;
-  background: linear-gradient(44.8deg, rgba(255, 136, 102, 0.67) -53.1%, rgba(255, 221, 136, 0.28) 49%);
+  background: linear-gradient(
+    44.8deg,
+    rgba(255, 136, 102, 0.67) -53.1%,
+    rgba(255, 221, 136, 0.28) 49%
+  );
   cursor: pointer;
-  letter-spacing: 0.10mm;
+  letter-spacing: 0.1mm;
   font-size: 30px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-weight: 500;
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  text-shadow: 1px 1px 2px black;
 }
 
-.carouselArrowRight ,.carouselArrowLeft{
+.carouselArrowRight,
+.carouselArrowLeft {
   position: absolute;
   font-size: 40px;
   top: 50%;
@@ -77,22 +83,21 @@ transition: 0.5s linear;
   cursor: pointer;
 }
 
-
-.carouselArrowLeft{
+.carouselArrowLeft {
   left: 15px;
 }
-.carouselArrowRight{
+.carouselArrowRight {
   right: 15px;
 }
 
-.carouselPagination{
+.carouselPagination {
   position: absolute;
   bottom: 5px;
   left: 50%;
   transform: translate(-50%, 0);
 }
 
-.carouselPaginationDot{
+.carouselPaginationDot {
   height: 10px;
   width: 10px;
   background-color: #f5f5f5;
@@ -102,10 +107,10 @@ transition: 0.5s linear;
   cursor: pointer;
 }
 
-.carouselPaginationDot:hover{
+.carouselPaginationDot:hover {
   transform: scale(1.2);
 }
 
-.carouselPaginationDotActive{
+.carouselPaginationDotActive {
   background-color: steelblue;
 }
