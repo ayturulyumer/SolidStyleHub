@@ -8,6 +8,14 @@ export const sliderImages = [
         title: "Men"
     },
     {
+        url:"https://images.pexels.com/photos/4715311/pexels-photo-4715311.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        title:"Children"
+    },
+    {
+        url:"https://images.pexels.com/photos/313719/pexels-photo-313719.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        title:"Accessories"
+    },
+    {
         url:"https://images.pexels.com/photos/786003/pexels-photo-786003.jpeg?auto=compress&cs=tinysrgb&w=1600&h=750&dpr=1",
         title: "Shoes"
     },

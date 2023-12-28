@@ -15,11 +15,11 @@ export default function Slider() {
   });
 
   const prevSlide = () => {
-    setCurrentSlide(currentSlide === 0 ? 2 : currentSlide - 1);
+    setCurrentSlide(currentSlide === 0 ? 4 : currentSlide - 1);
   };
 
   const nextSlide = () => {
-    setCurrentSlide(currentSlide === 2 ? 0 : currentSlide + 1);
+    setCurrentSlide(currentSlide === 4 ? 0 : currentSlide + 1);
   };
   return (
     <div className={styles.slider}>
