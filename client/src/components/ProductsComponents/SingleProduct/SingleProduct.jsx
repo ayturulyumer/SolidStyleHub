@@ -45,7 +45,8 @@ export default function SingleProduct() {
           <button onClick={() => setQuantity((prev) => prev + 1)}>+</button>
         </div>
         <div className={styles.add}>
-          <AddShoppingCartOutlinedIcon /> ADD TO CART
+          ADD TO CART
+          <AddShoppingCartOutlinedIcon />
         </div>
         <div className={styles.links}>
           <div className={styles.item}>

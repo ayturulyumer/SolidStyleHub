@@ -5,8 +5,13 @@ import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined
 import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import Cart from "../ProductsComponents/Cart/Cart.jsx";
 export default function Navbar() {
+  const [openCart, setOpenCart] = useState(false)
   return (
+<>
+    {openCart && <Cart/>}
     <div className={styles.navbar}>
       <div className={styles.wrapper}>
         <div className={styles.left}>
@@ -66,13 +71,14 @@ export default function Navbar() {
             <SearchRoundedIcon />
             <PersonOutlineOutlinedIcon />
             <FavoriteBorderRoundedIcon />
-            <div className={styles.cartIcon}>
-              <ShoppingCartOutlinedIcon />
+            <div className={styles.cartIcon} onClick={() => setOpenCart(!openCart)}>
+              <ShoppingCartOutlinedIcon  />
               <span>0</span>
             </div>
           </div>
         </div>
       </div>
     </div>
+</>
   );
 }
