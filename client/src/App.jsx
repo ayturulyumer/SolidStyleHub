@@ -4,6 +4,7 @@ import Footer from "./components/Footer/Footer.jsx"
 import Home from "./pages/Home/Home.jsx";
 import Products from "./pages/Products/Products.jsx";
 import  "./app.css"
+import SingleProduct from "./components/ProductsComponents/SingleProduct/SingleProduct.jsx";
 function App() {
   return (
     <div className="link">
@@ -11,7 +12,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home/>} />
-          <Route path="/products/:id" element={<Products/>}/>
+          <Route path="/products/:categoryId" element={<Products/>}/>
+          <Route path="/details/:productId" element={<SingleProduct/>}/>
         </Routes>
         <Footer/>
       </Router>

@@ -47,5 +47,9 @@ export const dummyProducts = [
         oldPrice:35,
         newPrice:20
     },
-    
+]
+
+export const productImages = [
+    "https://images.pexels.com/photos/2319314/pexels-photo-2319314.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "https://images.pexels.com/photos/1176619/pexels-photo-1176619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 ]
