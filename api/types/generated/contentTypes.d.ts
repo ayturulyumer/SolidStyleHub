@@ -782,6 +782,16 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     title: Attribute.String;
     img: Attribute.Media;
     description: Attribute.Text;
+    products: Attribute.Relation<
+      'api::category.category',
+      'manyToMany',
+      'api::product.product'
+    >;
+    sub_categories: Attribute.Relation<
+      'api::category.category',
+      'manyToMany',
+      'api::sub-category.sub-category'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -806,6 +816,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
     singularName: 'product';
     pluralName: 'products';
     displayName: 'product';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -829,6 +840,16 @@ export interface ApiProductProduct extends Schema.CollectionType {
         min: 1;
       }>;
     isNew: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
+    categories: Attribute.Relation<
+      'api::product.product',
+      'manyToMany',
+      'api::category.category'
+    >;
+    sub_categories: Attribute.Relation<
+      'api::product.product',
+      'manyToMany',
+      'api::sub-category.sub-category'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -853,12 +874,23 @@ export interface ApiSubCategorySubCategory extends Schema.CollectionType {
     singularName: 'sub-category';
     pluralName: 'sub-categories';
     displayName: 'sub-category';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     title: Attribute.String;
+    products: Attribute.Relation<
+      'api::sub-category.sub-category',
+      'manyToMany',
+      'api::product.product'
+    >;
+    categories: Attribute.Relation<
+      'api::sub-category.sub-category',
+      'manyToMany',
+      'api::category.category'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
