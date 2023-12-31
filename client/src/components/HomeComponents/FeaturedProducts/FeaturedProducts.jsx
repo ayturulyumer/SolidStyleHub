@@ -1,6 +1,5 @@
 import styles from "./featuredProducts.module.css";
 import Card from "../../Card/Card.jsx";
-import { dummyProducts } from "../../../constants/constants.js";
 import * as productsApi from "../../../../apis/productsApi.js"
 import { useEffect,useState } from "react";
 
@@ -10,7 +9,7 @@ export default function FeaturedProducts({ type }) {
 const [products,setProducts] = useState([])
 
 useEffect(() => {
-  productsApi.getAll()
+  productsApi.getProductsByType(type)
   .then((data) => setProducts(data))
   /**Add proper error handling   */
   .catch((err) => console.log(err))

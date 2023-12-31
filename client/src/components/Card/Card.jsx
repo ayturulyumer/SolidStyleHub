@@ -8,7 +8,7 @@ export default function Card({product}) {
         <div className={styles.card}>
           <div className={styles.image}>
             {product?.isNew && <span>New Season</span>}
-            <img src={imageURL + product.firstImg.data.attributes.url} alt={product.title} className={styles.mainImg}/>
+            <img src={imageURL + product?.firstImg?.data?.attributes?.url} alt={product.title} className={styles.mainImg}/>
           </div>
           <h2>{product?.title}</h2>
           <div className={styles.prices}>

@@ -8,9 +8,9 @@ export default function Home() {
   return (
     <div className={styles.home}>
         <Slider/>
-        <FeaturedProducts type="Featured"/>
+        <FeaturedProducts type="featured"/>
         <Categories/>
-        <FeaturedProducts type="Trending"/>
+        <FeaturedProducts type="trending"/>
         <Contact/>
     </div>
   )
