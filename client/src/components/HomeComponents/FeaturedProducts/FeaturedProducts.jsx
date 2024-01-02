@@ -7,7 +7,6 @@ export default function FeaturedProducts({ type }) {
   const {data, loading, error} = useFetch(
     `/products?populate=*&[filters][type][$eq]=${type}`
   );
-  console.log(data);
   return (
     <div className={styles.featuredProducts}>
       <div className={styles.top}>
