@@ -1,13 +1,19 @@
-import styles from "./list.module.css"
-import { dummyProducts } from "../../../constants/constants.js"
-import Card from "../../Card/Card.jsx"
+import styles from "./list.module.css";
+import Card from "../../Card/Card.jsx";
+import {useFetch} from "../../../hooks/useFetch.js"
 
-export default function List() {
+export default function List({ categoryId, maxPrice, sort, subCats }) {
+
+  {/** Initially fetch all the products related to the current category */}
+  const {data, loading, error} = useFetch(
+    `/products?populate=*&[filters][categories][id][$eq]=${categoryId}`
+  );
+ 
   return (
-   <div className={styles.list}>
-    {dummyProducts?.map(product =>(
-        <Card key={product.id} product={product}/>
-    ))}
-   </div>
-  )
+    <div className={styles.list}>
+      {data?.map((product) => (
+        <Card key={product.id} product={product.attributes} />
+      ))}
+    </div>
+  );
 }
