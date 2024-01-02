@@ -1,6 +1,7 @@
 import styles from "./featuredProducts.module.css";
 import Card from "../../Card/Card.jsx";
 import { useFetch } from "../../../hooks/useFetch.js";
+import Spinner from "../../Spinner/Spinner.jsx";
 
 export default function FeaturedProducts({ type }) {
   const {data, loading, error} = useFetch(
@@ -20,6 +21,7 @@ export default function FeaturedProducts({ type }) {
         </p>
       </div>
       <div className={styles.bottom}>
+        {loading && <Spinner/>}
         {data.map((product) => {
           return <Card product={product.attributes} key={product.id} />;
         })}
