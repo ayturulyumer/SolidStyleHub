@@ -6,7 +6,7 @@ export default function List({ categoryId, maxPrice, sort, subCats }) {
 
   {/** Initially fetch all the products related to the current category */}
   const {data, loading, error} = useFetch(
-    `/products?populate=*&[filters][categories][id][$eq]=${categoryId}`
+    `/products?populate=*&[filters][categories][id][$eq]=${categoryId}${subCats.map(category => `&[filters][sub_categories][id][$eq]=${category}`)}`
   );
  
   return (
