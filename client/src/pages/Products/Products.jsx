@@ -6,11 +6,16 @@ import mapCategoryToId from "../../utils/utils.js";
 import { useFetch } from "../../hooks/useFetch.js";
 export default function Products() {
   const { categoryId } = useParams();
+  {/**This state is for following the price filter changes */}
+  const [priceFilter,setPriceFilter] = useState(1000)
+  {/** This one is is set after clicking filter then it will be sended for fetching data */}
   const [maxPrice, setMaxPrice] = useState(1000);
   const [sort, setSort] = useState(null);
   const [selectedSubCategories, setSelectedSubCategories] = useState([]);
 
+
   const id = mapCategoryToId(categoryId);
+  {/** Fetch Sub-Categories from Strapi */}
   const { data, loading, error } = useFetch(
     `/sub-categories?[filters][categories][id][$eq]=${id}`
   );
@@ -46,14 +51,15 @@ export default function Products() {
         <div className={styles.filterItem}>
           <h2>Filter by price</h2>
           <div className={styles.inputItem}>
-            <span>0</span>
+            <span>$0</span>
             <input
               type="range"
               min={0}
               max={1000}
-              onChange={(e) => setMaxPrice(e.target.value)}
+              onChange={(e) => setPriceFilter(e.target.value)}
             />
-            <span>{maxPrice}</span>
+            <span>${priceFilter}</span>
+            <button onClick={() => setMaxPrice(priceFilter)}>Filter</button>
           </div>
         </div>
         <div className={styles.filterItem}>
@@ -86,7 +92,7 @@ export default function Products() {
           src="https://cdn.pixabay.com/photo/2017/03/20/15/13/wrist-watch-2159351_1280.jpg"
           alt="categoryImg"
         />
-        <List id={id} maxPrice={maxPrice} sort={sort} subCats={selectedSubCategories} />
+        <List categoryId={id} maxPrice={maxPrice} sort={sort} subCats={selectedSubCategories} />
       </div>
     </div>
   );
