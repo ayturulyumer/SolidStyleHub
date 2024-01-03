@@ -9,7 +9,7 @@ export default function List({ categoryId, maxPrice, sort, subCats }) {
   const { data, loading, error } = useFetch(
     `/products?populate=*&[filters][categories][id][$eq]=${categoryId}${subCats.map(
       (category) => `&[filters][sub_categories][id][$eq]=${category}`
-    )}&[filters][price][$lte]=${maxPrice}`
+    )}&[filters][price][$lte]=${maxPrice}${sort ? `&sort=price:${sort}` : ""}`
   );
 
   return (
