@@ -10,31 +10,37 @@
   top: 50px;
 }
 
-.filterItem{
+.filterItem {
+  margin-top: 30px;
   margin-bottom: 30px;
 }
 
-.filterItem h2{
+.filterItem h2 {
   font-weight: 400;
   margin-bottom: 20px;
 }
 
-.inputItem{
+.inputItem {
   margin-bottom: 10px;
 }
 
-.inputItem label{
+.inputItem label {
   margin-left: 10px;
+}
+.inputItem button {
+  width: 100px;
+  height: 35px;
+  margin-right: 326px;
+  margin-bottom: 30px;
 }
 
 .right {
   flex: 3;
 }
 
-.categoryImg{
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    margin-bottom: 50px;
-    
+.categoryImg {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  margin-bottom: 50px;
 }

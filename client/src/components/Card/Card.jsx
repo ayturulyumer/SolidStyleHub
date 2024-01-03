@@ -1,10 +1,11 @@
 import styles from "./card.module.css"
 import {Link} from "react-router-dom"
  
-export default function Card({product}) {
+export default function Card({product,productId}) {
   const imageURL = import.meta.env.VITE_APP_IMAGE_URL
+
   return (
-    <Link className="link" to={`/products/${product.id}`}>
+    <Link className="link" to={`/products/details/${productId}`}>
         <div className={styles.card}>
           <div className={styles.image}>
             {product?.isNew && <span>New Season</span>}

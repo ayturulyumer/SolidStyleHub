@@ -4,36 +4,43 @@ import { productImages } from "../../../constants/constants.js";
 import AddShoppingCartOutlinedIcon from "@mui/icons-material/AddShoppingCartOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import BalanceOutlinedIcon from "@mui/icons-material/BalanceOutlined";
+import { useFetch } from "../../../hooks/useFetch.js";
+import { useParams } from "react-router-dom";
 
 export default function SingleProduct() {
-  const [selectedImage, setSelectedImage] = useState(0);
+  const [selectedImage, setSelectedImage] = useState("firstImg");
   const [quantity, setQuantity] = useState(0);
+
+  const {productId} = useParams()
+  const imageURL = import.meta.env.VITE_APP_IMAGE_URL
+ 
+
+  const {data,loading,error} = useFetch(`/products/${productId}?populate=*`)
+  console.log(data)
   return (
     <div className={styles.product}>
       <div className={styles.left}>
         <div className={styles.images}>
           <img
-            src={productImages[0]}
+            src={imageURL + data?.attributes?.firstImg?.data?.attributes?.url}
             alt="firstImg"
-            onClick={() => setSelectedImage(0)}
+            onClick={() => setSelectedImage("firstImg")}
           />
           <img
-            src={productImages[1]}
+            src={imageURL + data?.attributes?.secondImg?.data?.attributes?.url}
             alt="secondImg"
-            onClick={() => setSelectedImage(1)}
+            onClick={() => setSelectedImage("secondImg")}
           />
         </div>
         <div className={styles.mainImg}>
-          <img src={productImages[selectedImage]} alt="" />
+          <img src={imageURL + data?.attributes?.[selectedImage]?.data?.attributes?.url} alt="mainImg" />
         </div>
       </div>
       <div className={styles.right}>
-        <h1>Title</h1>
-        <span className={styles.price}>$100</span>
+        <h1>{data?.attributes?.title}</h1>
+        <span className={styles.price}>${data?.attributes?.price}</span>
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi
-          nesciunt numquam cupiditate minima ratione eum repellendus fugit.
-          Dicta, nam commodi.
+         {data?.attributes?.description}
         </p>
         <div className={styles.quantity}>
           <button

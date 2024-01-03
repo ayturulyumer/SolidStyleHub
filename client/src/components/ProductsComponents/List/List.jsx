@@ -2,7 +2,7 @@ import styles from "./list.module.css";
 import Card from "../../Card/Card.jsx";
 import { useFetch } from "../../../hooks/useFetch.js";
 
-export default function List({ categoryId, maxPrice, sort, subCats }) {
+export default function List({ categoryId, maxPrice, sort, subCats}) {
   {
     /** Initially fetch all the products related to the current category */
   }
@@ -15,7 +15,7 @@ export default function List({ categoryId, maxPrice, sort, subCats }) {
   return (
     <div className={styles.list}>
       {data?.map((product) => (
-        <Card key={product.id} product={product.attributes} />
+        <Card key={product.id} product={product.attributes} productId={product.id} />
       ))}
     </div>
   );

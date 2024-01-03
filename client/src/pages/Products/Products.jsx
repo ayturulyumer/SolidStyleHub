@@ -6,16 +6,21 @@ import mapCategoryToId from "../../utils/utils.js";
 import { useFetch } from "../../hooks/useFetch.js";
 export default function Products() {
   const { categoryId } = useParams();
-  {/**This state is for following the price filter changes */}
-  const [priceFilter,setPriceFilter] = useState(1000)
-  {/** This one is is set after clicking filter then it will be sended for fetching data */}
+  {
+    /**This state is for following the price filter changes */
+  }
+  const [priceFilter, setPriceFilter] = useState(1000);
+  {
+    /** This one is is set after clicking filter then it will be sended for fetching data */
+  }
   const [maxPrice, setMaxPrice] = useState(1000);
   const [sort, setSort] = useState(null);
   const [selectedSubCategories, setSelectedSubCategories] = useState([]);
 
-
   const id = mapCategoryToId(categoryId);
-  {/** Fetch Sub-Categories from Strapi */}
+  {
+    /** Fetch Sub-Categories from Strapi */
+  }
   const { data, loading, error } = useFetch(
     `/sub-categories?[filters][categories][id][$eq]=${id}`
   );
@@ -23,13 +28,13 @@ export default function Products() {
   const handleChange = (e) => {
     const value = e.target.value;
     const isChecked = e.target.checked;
-  {/** If radio is checked set the value inside state if it's unchecked remove the value from the state */}
+    {
+      /** If radio is checked set the value inside state if it's unchecked remove the value from the state */
+    }
     setSelectedSubCategories((state) =>
       isChecked ? [...state, value] : state.filter((item) => item !== value)
     );
   };
-
- 
 
   return (
     <div className={styles.products}>
@@ -92,7 +97,12 @@ export default function Products() {
           src="https://cdn.pixabay.com/photo/2017/03/20/15/13/wrist-watch-2159351_1280.jpg"
           alt="categoryImg"
         />
-        <List categoryId={id} maxPrice={maxPrice} sort={sort} subCats={selectedSubCategories} />
+        <List
+          categoryId={id}
+          maxPrice={maxPrice}
+          sort={sort}
+          subCats={selectedSubCategories}
+        />
       </div>
     </div>
   );
