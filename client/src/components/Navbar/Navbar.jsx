@@ -19,7 +19,7 @@ export default function Navbar() {
       <div className={styles.wrapper}>
         <div className={styles.left}>
           <div className={styles.item}>
-            <img src="usaflag.jpg" alt="language" width={30} height={20} />
+            <img src="../usaflag.jpg" alt="language" width={30} height={20} />
             <KeyboardArrowDownRoundedIcon />
           </div>
           <div className={styles.item}>

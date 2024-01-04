@@ -26,7 +26,7 @@ export default function Footer() {
             <div className={styles.copyright}> © Copyright Ayturul Yumer 2024 . All rights reserved </div>
         </div>
         <div className={styles.right}>
-            <img src="paymentmethods.png" alt="paymentmethods" />
+            <img src="../paymentmethods.png" alt="paymentmethods" />
         </div>
     </div>
    </div>
