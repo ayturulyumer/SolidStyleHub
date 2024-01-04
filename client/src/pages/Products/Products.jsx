@@ -2,7 +2,7 @@ import List from "../../components/ProductsComponents/List/List.jsx";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import styles from "./products.module.css";
-import mapCategoryToId from "../../utils/utils.js";
+import {mapCategoryToId , mapImageToCategory} from "../../utils/utils.js";
 import { useFetch } from "../../hooks/useFetch.js";
 export default function Products() {
   const { categoryId } = useParams();
@@ -18,6 +18,7 @@ export default function Products() {
   const [selectedSubCategories, setSelectedSubCategories] = useState([]);
 
   const id = mapCategoryToId(categoryId);
+  const categoryImage = mapImageToCategory(categoryId)
   {
     /** Fetch Sub-Categories from Strapi */
   }
@@ -94,7 +95,7 @@ export default function Products() {
       <div className={styles.right}>
         <img
           className={styles.categoryImg}
-          src="https://cdn.pixabay.com/photo/2017/03/20/15/13/wrist-watch-2159351_1280.jpg"
+          src={categoryImage}
           alt="categoryImg"
         />
         <List
