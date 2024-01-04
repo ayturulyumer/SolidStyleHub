@@ -6,19 +6,24 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import BalanceOutlinedIcon from "@mui/icons-material/BalanceOutlined";
 import { useFetch } from "../../../hooks/useFetch.js";
 import { useParams } from "react-router-dom";
+import CartContext from "../../../contexts/CartContext.jsx";
+import { useContext } from "react";
 
 export default function SingleProduct() {
   const [selectedImage, setSelectedImage] = useState("firstImg");
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
 
-  const {productId} = useParams()
-  const imageURL = import.meta.env.VITE_APP_IMAGE_URL
- 
+  const { productId } = useParams();
+  const imageURL = import.meta.env.VITE_APP_IMAGE_URL;
+  const { addToCart } = useContext(CartContext);
 
-  const {data,loading,error} = useFetch(`/products/${productId}?populate=*`)
-  console.log(data)
+  const { data, loading, error } = useFetch(
+    `/products/${productId}?populate=*`
+  );
+
+  
   return (
-    <div className={styles.product}>
+    <div className={styles.product}>  
       <div className={styles.left}>
         <div className={styles.images}>
           <img
@@ -33,15 +38,19 @@ export default function SingleProduct() {
           />
         </div>
         <div className={styles.mainImg}>
-          <img src={imageURL + data?.attributes?.[selectedImage]?.data?.attributes?.url} alt="mainImg" />
+          <img
+            src={
+              imageURL +
+              data?.attributes?.[selectedImage]?.data?.attributes?.url
+            }
+            alt="mainImg"
+          />
         </div>
       </div>
       <div className={styles.right}>
         <h1>{data?.attributes?.title}</h1>
         <span className={styles.price}>${data?.attributes?.price}</span>
-        <p>
-         {data?.attributes?.description}
-        </p>
+        <p>{data?.attributes?.description}</p>
         <div className={styles.quantity}>
           <button
             onClick={() => setQuantity((prev) => (prev == 1 ? 1 : prev - 1))}
@@ -51,10 +60,22 @@ export default function SingleProduct() {
           {quantity}
           <button onClick={() => setQuantity((prev) => prev + 1)}>+</button>
         </div>
-        <div className={styles.add}>
+        <button
+          className={styles.add}
+          onClick={() =>
+            addToCart({
+              id: data.id,
+              title: data.attributes.title,
+              description: data.attributes.description,
+              price: data.attributes.price,
+              img: imageURL + data.attributes.firstImg.data.attributes.url,
+              quantity,
+            })
+          }
+        >
           ADD TO CART
           <AddShoppingCartOutlinedIcon />
-        </div>
+        </button>
         <div className={styles.links}>
           <div className={styles.item}>
             <FavoriteBorderOutlinedIcon /> ADD TO WISHLIST
