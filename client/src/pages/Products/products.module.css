@@ -28,9 +28,20 @@
   margin-left: 10px;
 }
 .inputItem button {
+  background-color: #2879fe;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  cursor: pointer;
+  border: none;
+  font-weight: 500;
+  border-radius: 10px;
   width: 100px;
   height: 35px;
-  margin-right: 326px;
+  margin-right: 500px;
+  margin-left: 35px;
   margin-bottom: 30px;
 }
 
