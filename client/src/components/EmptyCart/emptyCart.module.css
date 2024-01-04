@@ -1,0 +1,22 @@
+.emptycart {
+  height: 150px;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.emptycart span {
+  color: rgb(255, 255, 255);
+  background: #2cbb00;
+  padding: 20px;
+  border-radius: 50%;
+}
+
+.message{
+    font-family: Arial, Helvetica, sans-serif;
+   font-weight: 500;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+}
