@@ -57,11 +57,12 @@
   margin-bottom: 20px;
 }
 
-button {
-    float: right;
-  width: 250px;
-  height: 44px;
+.cart button {
+  float: right;
+  width: 150px;
+  height: 34px;
   padding: 10px;
+  margin-left: 30px;
   background-color: #2879fe;
   color: white;
   display: flex;
@@ -74,21 +75,21 @@ button {
   border-radius: 10px;
 }
 
-.reset{
-    width: 150px;
-    padding: 5px;
-    background-color: #ec0000;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    cursor: pointer;
-    border: none;
-    font-weight: 500;
-    border-radius: 10px;
+.reset {
+  width: 150px;
+  padding: 5px;
+  background-color: #ec0000;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  border: none;
+  font-weight: 500;
+  border-radius: 10px;
 }
 
 .reset span {
-justify-content: center;
+  justify-content: center;
 }
