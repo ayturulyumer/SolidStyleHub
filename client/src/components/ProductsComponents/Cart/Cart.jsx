@@ -6,6 +6,7 @@ import EmptyCart from "../../EmptyCart/EmptyCart.jsx";
 
 import { useContext } from "react";
 import CartContext from "../../../contexts/CartContext.jsx";
+import { Link } from "react-router-dom";
 
 export default function Cart() {
   const { cart,removeFromCart,resetCart } = useContext(CartContext);
@@ -17,9 +18,11 @@ export default function Cart() {
   return (
     <>
       {cart.length > 0 ? (
-        <div className={styles.cart}>
+        <div className={styles.cart} >
           <h1>Products in your cart</h1>
           {cart?.map((product) => (
+            <Link to={`/products/details/${product.id}`} className="link">
+
             <div className={styles.item} key={product.id} >
               <img src={product.img} alt={product.title} />
               <div className={styles.details}>
@@ -31,6 +34,7 @@ export default function Cart() {
               </div>
               <DeleteOutlinedIcon className={styles.delete} onClick={() => removeFromCart(product.id)}/>
             </div>
+            </Link>
           ))}
           <div className={styles.total}>
             <span>TOTAL :</span>
