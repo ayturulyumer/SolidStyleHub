@@ -7,6 +7,7 @@ export default function FeaturedProducts({ type }) {
   const {data, loading, error} = useFetch(
     `/products?populate=*&[filters][type][$eq]=${type}`
   );
+  console.log(data)
   return (
     <div className={styles.featuredProducts}>
       <div className={styles.top}>
@@ -22,7 +23,7 @@ export default function FeaturedProducts({ type }) {
       <div className={styles.bottom}>
         {loading && <Spinner/>}
         {data.map((product) => {
-          return <Card product={product.attributes} key={product.id} />;
+          return <Card product={product.attributes} key={product.id} productId={product.id} />;
         })}
       </div>
     </div>
