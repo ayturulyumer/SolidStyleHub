@@ -11,9 +11,9 @@ export const mapCategoryToId = (category) => {
 
 export const mapImageToCategory = (category) => {
   const imageToCategory = {
-    men: "https://images.pexels.com/photos/775358/pexels-photo-775358.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    men: "https://images.pexels.com/photos/432059/pexels-photo-432059.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     women:
-      "https://images.pexels.com/photos/1126993/pexels-photo-1126993.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/6567737/pexels-photo-6567737.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1  ",
     children:
       "https://images.pexels.com/photos/6437585/pexels-photo-6437585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     shoes:
