@@ -93,3 +93,9 @@
 .reset span {
   justify-content: center;
 }
+
+.closeIcon {
+  float: right;
+  color: red;
+  cursor: pointer;
+}

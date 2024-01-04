@@ -10,11 +10,11 @@ import Cart from "../ProductsComponents/Cart/Cart.jsx";
 import { useContext } from "react";
 import CartContext from "../../contexts/CartContext.jsx";
 export default function Navbar() {
-  const [openCart, setOpenCart] = useState(false)
-  const { cart } = useContext(CartContext);
+  const { cart, toggleCart , isCartOpen} = useContext(CartContext);
+ 
   return (
 <>
-    {openCart && <Cart/>}
+    {isCartOpen && <Cart/>}
     <div className={styles.navbar}>
       <div className={styles.wrapper}>
         <div className={styles.left}>
@@ -74,7 +74,7 @@ export default function Navbar() {
             <SearchRoundedIcon />
             <PersonOutlineOutlinedIcon />
             <FavoriteBorderRoundedIcon />
-            <div className={styles.cartIcon} onClick={() => setOpenCart(!openCart)}>
+            <div className={styles.cartIcon} onClick={() => toggleCart()}>
               <ShoppingCartOutlinedIcon  />
               <span>{cart.length}</span>
             </div>

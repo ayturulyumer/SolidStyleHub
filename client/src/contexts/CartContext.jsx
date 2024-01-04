@@ -2,6 +2,7 @@ import { createContext, useContext, useReducer } from "react";
 
 const initialState = {
   cart: [],
+  isCartOpen: false,
 };
 
 const CartContext = createContext();
@@ -46,11 +47,18 @@ const cartReducer = (state, action) => {
         ...state,
         cart: [],
       };
+
+    case "TOGGLE_CART":
+      return {
+        ...state,
+        isCartOpen: !state.isCartOpen,
+      };
   }
 };
 
 export const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(cartReducer, initialState);
+  
   const addToCart = (product) => {
     dispatch({ type: "ADD_TO_CART", payload: product });
   };
@@ -61,11 +69,16 @@ export const CartProvider = ({ children }) => {
   const resetCart = () => {
     dispatch({ type: "RESET_CART" });
   };
+
+  const toggleCart = () => {
+    dispatch({ type: "TOGGLE_CART" });
+  };
   const contextValues = {
     ...state,
     addToCart,
     removeFromCart,
     resetCart,
+    toggleCart
   };
 
   return (
