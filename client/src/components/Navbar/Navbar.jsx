@@ -7,8 +7,11 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import Cart from "../ProductsComponents/Cart/Cart.jsx";
+import { useContext } from "react";
+import CartContext from "../../contexts/CartContext.jsx";
 export default function Navbar() {
   const [openCart, setOpenCart] = useState(false)
+  const { cart } = useContext(CartContext);
   return (
 <>
     {openCart && <Cart/>}
@@ -73,7 +76,7 @@ export default function Navbar() {
             <FavoriteBorderRoundedIcon />
             <div className={styles.cartIcon} onClick={() => setOpenCart(!openCart)}>
               <ShoppingCartOutlinedIcon  />
-              <span>0</span>
+              <span>{cart.length}</span>
             </div>
           </div>
         </div>
