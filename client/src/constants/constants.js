@@ -1,23 +1,29 @@
 export const sliderImages = [
     {
         url:"https://images.pexels.com/photos/2229490/pexels-photo-2229490.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        title: "Women"
+        title: "Women",
+        link:"/products/women"
     },
     {
         url:"https://images.pexels.com/photos/842811/pexels-photo-842811.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        title: "Men"
+        title: "Men",
+        link:"/products/men"
     },
     {
         url:"https://images.pexels.com/photos/4715311/pexels-photo-4715311.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        title:"Children"
+        title:"Children",
+        link:"/products/children"
     },
     {
         url:"https://images.pexels.com/photos/313719/pexels-photo-313719.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        title:"Accessories"
+        title:"Accessories",
+        link:"/products/accessories"
+
     },
     {
         url:"https://images.pexels.com/photos/786003/pexels-photo-786003.jpeg?auto=compress&cs=tinysrgb&w=1600&h=750&dpr=1",
-        title: "Shoes"
+        title: "Shoes",
+        link:"/products/shoes"
     },
 ];
 

@@ -1,7 +1,7 @@
 import styles from "./slider.module.css";
 import { useEffect, useState } from "react";
-import { sliderImages } from "../../../constants/constants.js"
-
+import { sliderImages } from "../../../constants/constants.js";
+import { Link } from "react-router-dom";
 export default function Slider() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [autoPlay, setAutoPlay] = useState(true);
@@ -49,7 +49,9 @@ export default function Slider() {
                 alt={image.title}
               />
               <div className={styles.cardOverlay}>
-                <h2 className={styles.cardTitle}>{image.title}</h2>
+                <Link to={image.link} className="link">
+                  <h2 className={styles.cardTitle}>{image.title}</h2>
+                </Link>
               </div>
             </div>
           );
@@ -69,7 +71,8 @@ export default function Slider() {
                   index == currentSlide
                     ? styles.carouselPaginationDotActive
                     : styles.carouselPaginationDot
-                }`} onMouseOver={() => setCurrentSlide(index)}
+                }`}
+                onMouseOver={() => setCurrentSlide(index)}
               ></div>
             );
           })}
