@@ -48,9 +48,9 @@ export default function Navbar() {
           </div>
         </div>
         <div className={styles.center}>
-          <div className={styles.item}>
+          <div className={styles.logoImage}>
             <Link to="/" className="link">
-              SolidStyleHub
+             <img src="../logo.png" alt="logo"  />
             </Link>
           </div>
         </div>
