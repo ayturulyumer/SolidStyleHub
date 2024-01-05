@@ -50,8 +50,8 @@ export default function Categories() {
                 alt="children"
               />
               <button>
-                <Link className="link" to="/products/children">
-                  Children
+                <Link className="link" to="/products/kids">
+                  Kids
                 </Link>
               </button>
             </div>

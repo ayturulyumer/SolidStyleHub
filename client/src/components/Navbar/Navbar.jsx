@@ -37,8 +37,8 @@ export default function Navbar() {
             </Link>
           </div>
           <div className={styles.item}>
-            <Link to="/products/children" className="link">
-              Children
+            <Link to="/products/kids" className="link">
+             Kids
             </Link>
           </div>
           <div className={styles.item}>
