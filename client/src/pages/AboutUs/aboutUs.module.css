@@ -1,0 +1,154 @@
+/* YourModuleStyles.module.css */
+
+/* Base Styles */
+:global {
+  * {
+    font-family: Nunito, sans-serif;
+  }
+}
+
+/* .textBlk Styles */
+.textBlk {
+  margin: 0;
+  padding: 0;
+  line-height: 25px;
+}
+
+/* .responsiveContainerBlock Styles */
+.responsiveContainerBlock {
+  min-height: 75px;
+  height: fit-content;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: flex-start;
+}
+
+/* .bigContainer Styles */
+.bigContainer {
+  padding: 10px 30px;
+  background-image: url("https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/bb29.png");
+  background-size: cover;
+}
+
+/* .Container Styles */
+.Container {
+  max-width: 800px;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin: 150px auto;
+  background-color: white;
+  border-radius: 10px;
+}
+
+/* .heading Styles */
+.heading {
+  font-size: 36px;
+  line-height: 45px;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+/* .subHeading Styles */
+.subHeading {
+  text-align: center;
+  font-size: 18px;
+  line-height: 26px;
+  margin-bottom: 60px;
+}
+
+/* .socialIcon Styles */
+.socialIcon {
+  width: 33px;
+  height: 33px;
+}
+
+/* .socialIconsContainer Styles */
+.socialIconsContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+/* .socialIcon Styles */
+.socialIcon {
+  margin: 0 50px;
+}
+
+/* .socialIcon:hover Styles */
+.socialIcon:hover {
+  cursor: pointer;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .heading {
+    font-size: 55px;
+    line-height: 65px;
+  }
+
+  .subHeading {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .socialIcon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .subHeading {
+    line-height: 27px;
+  }
+
+  .heading {
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 20px;
+  }
+
+  .socialIcon {
+    margin: 0 25px;
+  }
+}
+
+@media (max-width: 500px) {
+  .bigContainer {
+    padding: 10px 20px;
+  }
+
+  .heading {
+    font-size: 45px;
+    line-height: 55px;
+    margin-bottom: 20px;
+  }
+
+  .subHeading {
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 30px;
+  }
+
+  .socialIconsContainer {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .subHeading {
+    font-size: 16px;
+    line-height: 23px;
+  }
+
+  .heading {
+    font-size: 26px;
+    line-height: 30px;
+  }
+
+  .socialIcon {
+    margin: 0 20px;
+  }
+}
