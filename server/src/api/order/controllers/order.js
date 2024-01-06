@@ -1,5 +1,5 @@
-const stripe = require("stripe")(process.env.STRIPE_KEY);
 ("use strict");
+const stripe = require("stripe")(process.env.STRIPE_KEY);
 
 /**
  * order controller
@@ -9,11 +9,12 @@ const { createCoreController } = require("@strapi/strapi").factories;
 
 module.exports = createCoreController("api::order.order", ({ strapi }) => ({
   async create(ctx) {
-    const { products, stripeId } = ctx.request.body;
+    const { cart } = ctx.request.body;
+    console.log(cart);
     const lineItems = await Promise.all(
-      products.map(async (item) => {
-        const item = await strapi
-          .service("api:product.product")
+      cart.map(async (item) => {
+        const product = await strapi
+          .service("api::product.product")
           .findOne(item.id);
 
         return {
@@ -22,7 +23,7 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
             product_data: {
               name: item.title,
             },
-            unit_amout: item.price * 100,
+            unit_amount: item.price * 100,
           },
           quantity: item.quantity,
         };
@@ -30,21 +31,22 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
     );
     try {
       const session = await stripe.checkout.sessions.create({
+        shipping_address_collection: { allowed_countries: ["BG", "US", "CA"] },
+        payment_method_types: ["card"],
         mode: "payment",
         success_url: `${process.env.CLIENT_URL}?success=true`,
         cancel_url: `${process.env.CLIENT_URL}?canceled=false`,
         line_items: lineItems,
-        shipping_address_collection: { allowed_countries: null },
-        payment_method_types: ["card"],
       });
-      await strapi.service("api::order:order").create({
+      await strapi.service("api::order.order").create({
         data: {
-          products,
+          cart,
           stripeId: session.id,
         },
       });
       return { stripeSession: session };
     } catch (err) {
+      console.error(err)
       ctx.response.status = 500;
       return err;
     }
