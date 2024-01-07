@@ -61,13 +61,18 @@ export default function Navbar() {
             </Link>
           </div>
           <div className={styles.item}>
-            <Link to="/aboutus" className="link">
-              About
+            <Link to="/register" className="link">
+              Register
             </Link>
           </div>
           <div className={styles.item}>
-            <Link to="/contacts" className="link">
-              Contact us
+            <Link to="/login" className="link">
+              Login
+            </Link>
+          </div>
+          <div className={styles.item}>
+            <Link to="/aboutus" className="link">
+              About
             </Link>
           </div>
           <div className={styles.icons}>
