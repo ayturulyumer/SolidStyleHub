@@ -13,18 +13,14 @@
   align-items: center;
   display: flex;
   justify-content: center;
-  background-image: radial-gradient(
-    circle farthest-corner at 10% 20%,
-    rgba(253, 101, 133, 1) 0%,
-    rgba(255, 211, 165, 1) 90%
-  );
+  background: radial-gradient(592px at 48.2% 50%, rgba(255, 255, 249, 0.6) 0%, rgb(160, 199, 254) 74.6%);
 }
 
 .card {
   border-radius: 10px;
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
   width: 400px;
-  height: 350 px;
+  height: 300px;
   background-color: #ffffff;
   padding: 10px 30px;
 }
@@ -50,6 +46,7 @@
 }
 
 .form button {
+  margin-top: 20px  ;
   background-color: #4796ff;
   color: #ffffff;
   font-size: 16px;
@@ -58,6 +55,7 @@
   border: none;
   padding: 8px 15px;
   width: 100%;
+  cursor: pointer;
 }
 
 .card_terms {
